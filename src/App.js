@@ -30,15 +30,19 @@ export default function App(props) {
   
   
   grid-template-columns: auto auto auto;
+  //grid-template-rows: auto-fit;
   background-color: #ffffff;
   display: grid;
-  z-index: 2;
+  z-index: 3;
   position: absolute;
-  left: 5vw;
+  //width: 20%;
+  left: 5vmax;
+  height: 100%;
+  justify-self: top;
   
-  padding: 15vw 0 24vh 0;
-  overflow: hidden;
-  grid-auto-flow: row
+  padding: 12vmax 0 24vmax 0;
+ // overflow: hidden;
+  //grid-auto-flow: row
 `
   const Simg2 = styled.img`
   width: 100%;
@@ -66,7 +70,7 @@ export default function App(props) {
   const SGradient = styled(Gradient)`
   width: 100%;
  
-  //z-index: -1;
+  z-index: -1;
   //background-color: grey;
   //fill: #6e40aa;
   //color: blue;
@@ -94,10 +98,20 @@ export default function App(props) {
   `
   const SOff = styled.div`
   position: absolute;
-  top: 5vw;
+  top: 5vmax;
   width:100%;
   background-color: grey;
   overflow: hidden;
+  `
+  const Sidebar = styled.div`
+  position: absolute;
+  opacity: 5%;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url("./icons/wdolph.svg");
+ 
+
   `
 
   const h = [...Array(4)].map((_, i) => i);
@@ -137,6 +151,8 @@ export default function App(props) {
     
       
     </SGrid>
+    
+   <Sidebar></Sidebar>
    
    <a href="https://michaellee.xyz" style={{position: "absolute" ,right:"0", bottom: "0", color:"white", zIndex: "2"}} target="_blank">&copy; {currentTime.getFullYear()} Michael Lee</a>
     <Sbg
