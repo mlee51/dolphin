@@ -45,7 +45,8 @@ export default function App(props) {
   position: absolute;
   //width: 20%;
   left: ${mobile? "0vmax": "5vmax" };
-  
+  opacity:90%;
+  mix-blend-mode: overlay;
   
   height: 100%;
   justify-self: top;
