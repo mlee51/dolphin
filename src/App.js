@@ -12,10 +12,9 @@ let currentTime = new Date();
 
 
 const gradients = [
-  ['rgb(231, 140, 255)', 'rgb(5,193,255)'],
-  ['rgb(78, 255, 167)', 'rgb(167, 255, 78)'],
-  ['rgb(5,193,255)', 'rgb(153,218,255)'],
-  ['rgb(255,140,174)', 'rgb(255,94,193)'],
+  ['#0BFFFF', '#5200FF'],
+  ['#0BFFC4', '#0001FF'],
+  ['#5200FF', '#0BFFC4']
   
 ];
 
@@ -37,23 +36,10 @@ export default function App(props) {
   position: absolute;
   left: 5vw;
   
-  
-  
   padding: 15vw 0 24vh 0;
   overflow: hidden;
   grid-auto-flow: row
 `
-  const SItem = styled.div`
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-  `
-  const Simg = styled(animated.img)`
-  margin: 1vw;
-  width: 7vw;
-  `
   const Simg2 = styled.img`
   width: 100%;
  // padding: 10px;
@@ -126,7 +112,7 @@ export default function App(props) {
     <SGradient
                 gradients={ gradients } // required
                 property="background"
-                duration={ 1800 }
+                duration={ 2400 }
                 angle="180deg"
             >
               
@@ -147,6 +133,7 @@ export default function App(props) {
       <Imagelink src={"./icons/kofi.jpg"} link={"https://ko-fi.com/dolphinuppercut"}/>
       <Imagelink src={"./icons/twitter.jpg"}link={"https://twitter.com/DolphinUppercut"}/>
       <Imagelink src={"./icons/instagram.jpg"}  link={"https://www.instagram.com/dolphinuppercut/"}/>
+      <Imagelink src={"./icons/discord.png"}  link={"https://www.instagram.com/dolphinuppercut/"}/>
     
       
     </SGrid>
@@ -155,7 +142,7 @@ export default function App(props) {
     <Sbg
         gradients={ gradients }
         property="background"
-        duration={ 1800 }
+        duration={ 2400 }
         angle="180deg"
        
       >
