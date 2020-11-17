@@ -18,6 +18,14 @@ const gradients = [
   
 ];
 
+let mobile = true;
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  mobile = true;
+}else{
+  mobile = false;
+}
+
 export default function App(props) {
   const [hovered, setHover] = useState(false);
   const big = useSpring({
@@ -29,14 +37,16 @@ export default function App(props) {
   const SGrid = styled.div`
   
   
-  grid-template-columns: auto auto auto;
+  grid-template-columns: ${mobile? "auto": "auto auto auto" };
   //grid-template-rows: auto-fit;
   background-color: #ffffff;
   display: grid;
   z-index: 3;
   position: absolute;
   //width: 20%;
-  left: 5vmax;
+  left: ${mobile? "0vmax": "5vmax" };
+  
+  
   height: 100%;
   justify-self: top;
   
@@ -105,11 +115,16 @@ export default function App(props) {
   `
   const Sidebar = styled.div`
   position: absolute;
-  opacity: 5%;
-  width: 100%;
+  opacity: ${!mobile? "5%" : "30%"};
+  width: ${!mobile? "100%":"90%"};
   height: 100%;
+  right: 0;
+  bottom: 100px;
+  background-repeat: ${!mobile?"repeat" : "no-repeat"};
+  //transform: translateX(85%) translateY(-25%) rotate(90deg) ;
   z-index: 0;
   background-image: url("./icons/wdolph.svg");
+
  
 
   `
@@ -121,6 +136,7 @@ export default function App(props) {
     <>
     
     <SGrid >
+    {!mobile  && (
     <SOff>
       
     <SGradient
@@ -134,7 +150,11 @@ export default function App(props) {
 
     </SGradient>
     
-    </SOff>
+    </SOff>)
+    }
+
+    
+
     
     
       <Imagelink src={"./icons/applemusic.jpg"}  link={"https://music.apple.com/us/artist/dolphin-uppercut-avenger/1434403698"}/>
@@ -153,8 +173,7 @@ export default function App(props) {
     </SGrid>
     
    <Sidebar></Sidebar>
-   
-   <a href="https://michaellee.xyz" style={{position: "absolute" ,right:"0", bottom: "0", color:"white", zIndex: "2"}} target="_blank">&copy; {currentTime.getFullYear()} Michael Lee</a>
+   <a href="https://michaellee.xyz" style={{position: "absolute" ,right:"20px", bottom: "0", color:"white", zIndex: "2", textDecoration: "none", opacity: "50%"}} target="_blank">&copy; {currentTime.getFullYear()} Michael Lee</a>
     <Sbg
         gradients={ gradients }
         property="background"
