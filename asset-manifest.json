@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dolphin/static/css/main.77698da1.chunk.css",
-    "main.js": "/dolphin/static/js/main.5b433d07.chunk.js",
-    "main.js.map": "/dolphin/static/js/main.5b433d07.chunk.js.map",
+    "main.js": "/dolphin/static/js/main.9f72ae88.chunk.js",
+    "main.js.map": "/dolphin/static/js/main.9f72ae88.chunk.js.map",
     "runtime-main.js": "/dolphin/static/js/runtime-main.991ca4c6.js",
     "runtime-main.js.map": "/dolphin/static/js/runtime-main.991ca4c6.js.map",
     "static/js/2.6e6f55dc.chunk.js": "/dolphin/static/js/2.6e6f55dc.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.991ca4c6.js",
     "static/js/2.6e6f55dc.chunk.js",
     "static/css/main.77698da1.chunk.css",
-    "static/js/main.5b433d07.chunk.js"
+    "static/js/main.9f72ae88.chunk.js"
   ]
 }
